@@ -8,15 +8,24 @@
   
   <title>QR code component</title>
   <link rel="stylesheet" href="./index.css">
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 </head>
 
 <body>
-
-  <img src="./images/linkedin-qr-code.png" alt="QR code for my Linkedin profile" width="200" height="200">
-
   <div class="attribution">
     <h3>Scan the QR code to visit my Linkedin Profile.</h3>
   </div>
+  <div id="qrcode"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script>
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "https://www.linkedin.com/in/harrison-itotia/",
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
 </body>
 </html>
